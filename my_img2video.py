@@ -22,15 +22,15 @@ def run(video_info):
         image = Image.open(image_name).convert("RGB")
         image_list.append(image)
     
-    imageio.mimsave(f'{opt.output_dir}/{video_name}', image_list, opt.fps)  # 指定质量参数10
+    imageio.mimsave(f'{opt.output_dir}/{video_name}', image_list, opt.fps)  
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--input_dir', type=str, 
-                        default="/media/lh/luhssd/datasets/vox1/face-video-preprocessing/vox-png/test",
+                        default="path_to_images",
                         help='the folder of the input files')
     parser.add_argument('--output_dir', type=str, 
-                        default="/media/lh/luhssd/datasets/vox1/face-video-preprocessing/video_format/test",
+                        default="path_to_videos",
                         help='the folder of the output files')
     parser.add_argument('--fps', type=int, default=25)
     parser.add_argument('--workers', type=int, default=4)
